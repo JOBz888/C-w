@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string text;
+    cout << "Mess: ";
+    cin >> text;
+
+    string result = "";
+
+    for (char c : text) {
+        if (islower(c)) {
+            result += toupper(c);   // ตัวเล็ก → ใหญ่
+        } else if (isupper(c)) {
+            result += tolower(c);   // ตัวใหญ่ → เล็ก
+        } else {
+            result += c;            // อื่นๆ ไม่เปลี่ยน
+        }
+    }
+
+    cout << "Output: " << result << endl;
+    return 0;
+}
